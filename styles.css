@@ -1,0 +1,698 @@
+* {
+    scroll-behavior: smooth;
+}
+
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-inter {
+    font-family: 'Inter', sans-serif;
+}
+
+.gold-glow {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.text-gold {
+    color: #FFD700;
+}
+
+.bg-gold {
+    background-color: #FFD700;
+}
+
+.text-emerald {
+    color: #10B981;
+}
+
+.bg-emerald {
+    background-color: #10B981;
+}
+
+.border-gold\/20 {
+    border-color: rgba(255, 215, 0, 0.2);
+}
+
+/* Simple rotation animation for fallback */
+@keyframes simpleRotate {
+    from { 
+        transform: rotate(0deg);
+    }
+    to { 
+        transform: rotate(360deg);
+    }
+}
+
+/* Enhanced 3D watch animations */
+.watch-3d {
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+    perspective: 1000px;
+    animation: watch3DFloat 6s ease-in-out infinite;
+}
+
+.watch-3d:hover {
+    transform: perspective(1000px) rotateY(15deg) rotateX(10deg) scale(1.1) translateZ(50px);
+    filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.9)) drop-shadow(0 0 60px rgba(255, 215, 0, 0.5));
+    animation-play-state: paused;
+}
+
+/* 3D floating animation */
+@keyframes watch3DFloat {
+    0%, 100% {
+        transform: perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0px) translateZ(0px);
+    }
+    25% {
+        transform: perspective(1000px) rotateY(5deg) rotateX(2deg) translateY(-10px) translateZ(20px);
+    }
+    50% {
+        transform: perspective(1000px) rotateY(-5deg) rotateX(-2deg) translateY(-5px) translateZ(10px);
+    }
+    75% {
+        transform: perspective(1000px) rotateY(3deg) rotateX(3deg) translateY(-15px) translateZ(30px);
+    }
+}
+
+/* Enhanced rotation animation */
+@keyframes slowRotate {
+    0% { 
+        transform: perspective(1000px) scale(1) rotate(0deg) translateZ(0px);
+        filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+    }
+    25% {
+        transform: perspective(1000px) scale(1.02) rotate(90deg) translateZ(10px);
+        filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+    }
+    50% { 
+        transform: perspective(1000px) scale(1) rotate(180deg) translateZ(0px);
+        filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.7));
+    }
+    75% {
+        transform: perspective(1000px) scale(1.02) rotate(270deg) translateZ(10px);
+        filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+    }
+    100% { 
+        transform: perspective(1000px) scale(1) rotate(360deg) translateZ(0px);
+        filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+    }
+}
+
+.parallax {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.luxury-gradient {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+}
+
+.gold-gradient {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+}
+
+.emerald-gradient {
+    background: linear-gradient(135deg, #10B981 0%, #059669 50%, #10B981 100%);
+}
+
+.rotating-gears {
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.pulse-gold {
+    animation: pulseGold 2s ease-in-out infinite;
+}
+
+@keyframes pulseGold {
+    0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+}
+
+.slide-gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.slide-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+}
+
+.collection-card img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.collection-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.gallery-image {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(16, 185, 129, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.gallery-image:hover::before {
+    opacity: 1;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
+    border-radius: 0.5rem;
+}
+
+.form-field:focus {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+    border-color: #10B981;
+}
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+.hero-bg {
+    background-image: url('https://images.unsplash.com/photo-1594576662092-3f4b4dc3f669?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.icon-card:hover .w-16 {
+    transform: scale(1.1) rotate(5deg);
+    transition: transform 0.3s ease;
+}
+
+.icon-card:hover h3 {
+    color: #FFD700;
+    transition: color 0.3s ease;
+}
+
+.video-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.video-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+}
+
+.video-container iframe {
+    transition: filter 0.3s ease;
+}
+
+.video-container:hover iframe {
+    filter: brightness(1.1);
+}
+
+/* Mobile Navigation */
+#mobile-menu {
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+#mobile-menu.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#mobile-menu a {
+    position: relative;
+    overflow: hidden;
+}
+
+#mobile-menu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+#mobile-menu a:hover::before {
+    left: 100%;
+}
+
+.mobile-menu-open {
+    overflow: hidden;
+}
+
+/* Hamburger Animation */
+#hamburger-icon {
+    transform: rotate(0deg);
+}
+
+#hamburger-icon.rotate {
+    transform: rotate(90deg);
+}
+
+#close-icon {
+    transform: rotate(-90deg) scale(0);
+}
+
+#close-icon.show {
+    transform: rotate(0deg) scale(1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero-bg {
+        background-attachment: scroll;
+    }
+    
+    .slide-gallery {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .watch-3d:hover {
+        transform: none;
+    }
+    
+    .card-hover:hover {
+        transform: translateY(-5px) scale(1.02);
+    }
+    
+    .gallery-image:hover {
+        transform: scale(1.02);
+    }
+    
+    .video-container:hover {
+        transform: none;
+    }
+    
+    .collection-card img {
+        height: 200px;
+    }
+    
+    .gallery-image img {
+        height: 200px;
+    }
+    
+    /* Mobile navigation adjustments */
+    nav {
+        padding: 0.75rem 1rem;
+    }
+    
+    .text-6xl {
+        font-size: 2.5rem;
+    }
+    
+    .text-8xl {
+        font-size: 3rem;
+    }
+    
+    .text-4xl {
+        font-size: 2rem;
+    }
+    
+    .text-5xl {
+        font-size: 2.25rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .text-6xl {
+        font-size: 2rem;
+    }
+    
+    .text-8xl {
+        font-size: 2.5rem;
+    }
+    
+    .w-80 {
+        width: 16rem;
+    }
+    
+    .h-60 {
+        height: 12rem;
+    }
+    
+    .h-64 {
+        height: 14rem;
+    }
+    
+    #mobile-menu {
+        margin-top: 0.5rem;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    .text-6xl {
+        font-size: 3.5rem;
+    }
+    
+    .text-8xl {
+        font-size: 4rem;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+    .card-hover:hover {
+        transform: none;
+    }
+    
+    .gallery-image:hover {
+        transform: none;
+    }
+    
+    .watch-3d:hover {
+        transform: none;
+    }
+    
+    /* Add tap effects instead */
+    .card-hover:active {
+        transform: scale(0.98);
+    }
+    
+    .gallery-image:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Smooth scroll animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.6s ease;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Loading animation */
+.loading {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Enhanced hero animations */
+@keyframes bounceInRotate {
+    0% {
+        opacity: 0;
+        transform: scale(0.6) rotate(-180deg) translateY(-50px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.1) rotate(360deg) translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(360deg) translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hero section floating effect */
+.hero-floating {
+    animation: heroFloat 6s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Enhanced 3D Sparkle effects */
+.sparkle-3d {
+    animation: sparkle3DGlow 3s ease-in-out infinite;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+@keyframes sparkle3DGlow {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0) rotateY(0deg) rotateX(0deg);
+        box-shadow: 0 0 5px #FFD700;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotateY(180deg) rotateX(90deg);
+        box-shadow: 0 0 20px #FFD700, 0 0 40px #FFA500;
+    }
+}
+
+/* Watch container 3D setup */
+.watch-container {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+/* Hero content 3D floating */
+.hero-content {
+    animation: heroContent3DFloat 5s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+@keyframes heroContent3DFloat {
+    0%, 100% {
+        transform: translateY(0px) rotateX(0deg) translateZ(0px);
+    }
+    33% {
+        transform: translateY(-8px) rotateX(1deg) translateZ(10px);
+    }
+    66% {
+        transform: translateY(-3px) rotateX(-0.5deg) translateZ(5px);
+    }
+}
+
+/* Ensure hero watch is always visible with 3D effects - FORCE VISIBILITY */
+#heroWatch {
+    opacity: 1 !important;
+    display: block !important;
+    visibility: visible !important;
+    transform-style: preserve-3d !important;
+    perspective: 1000px;
+    width: 20rem !important;
+    height: 20rem !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    position: relative !important;
+    z-index: 10 !important;
+    /* Remove all animations temporarily to ensure visibility */
+    animation: none !important;
+}
+
+/* Loading state for hero watch */
+#heroWatch.loading {
+    opacity: 0;
+    transform: perspective(1000px) scale(0.8) rotateY(-180deg);
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* 3D Reflection effect */
+#heroWatch::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    transform: scaleY(-1);
+    opacity: 0.3;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Hero content animations */
+.hero-content {
+    animation: heroContentFloat 4s ease-in-out infinite;
+}
+
+@keyframes heroContentFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Hero gold text glow effect */
+.hero-gold-text {
+    transition: text-shadow 0.3s ease;
+}
+
+.hero-gold-text:hover {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+/* Hero CTA button enhanced effects */
+.hero-cta {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.hero-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.hero-cta:hover::before {
+    left: 100%;
+}
+
+.hero-cta:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+}
